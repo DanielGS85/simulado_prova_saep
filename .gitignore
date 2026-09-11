@@ -1,0 +1,63 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# Environment files (sensitive)
+.env
+.env.*
+!.env.example
+
+# VS Code workspace
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Database files and dumps (do not commit sensitive DB data)
+/data/
+/db_data/
+/pgdata/
+*.sql
+*.sql.gz
+*.dump
+*.backup
+*.bak
+*.db
+*.sqlite
+*.sqlite3
+
+# PostgreSQL runtime
+pids/
+*.pid
+
+# OS generated files
+*.swp
+*~
+
+# IDE specific
+*.iml
+.idea/
+
+# TypeScript
+*.tsbuildinfo
+
+# Secrets
+*.key
+*.pem
+*.cer
+*.crt
+
+# Misc
+.DS_Store
+Thumbs.db
