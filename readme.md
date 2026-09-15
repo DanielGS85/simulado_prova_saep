@@ -24,7 +24,7 @@ Você, como desenvolvedor, deverá criar um sistema que permita o cadastro e ger
 3- ordem de servico
 
 ### realcionamento
-brModel para modeloar o diagrama salve em formato pdf
+brModel para modelar o diagrama salve em formato pdf
 
 cliente (1,1)------(1,n)veiculo(1,1)----------(1,n)ordem de servico
 
@@ -102,8 +102,8 @@ SESSION_EXPIRATION=3600
 
 ```sql
 CREATE DATABASE sgc_oficina_dev;
-CREATE USER sgc_user WITH PASSWORD 'senha';
-GRANT ALL PRIVILEGES ON DATABASE sgc_oficina_dev TO sgc_user;
+-- CREATE USER sgc_user WITH PASSWORD 'senha';
+-- GRANT ALL PRIVILEGES ON DATABASE sgc_oficina_dev TO sgc_user;
 ```
 
 4. Instalar e configurar TypeORM (dependências comuns):
@@ -113,7 +113,36 @@ npm install typeorm reflect-metadata pg
 npm install -D typescript ts-node-dev
 ```
 
-Adicione/ajuste o `ormconfig` ou a configuração do TypeORM no arquivo de configuração do projeto apontando para as variáveis do `.env`.
+## Configuração do TypeORM
+
+Depois de criar o arquivo `.env`, é necessário configurar o TypeORM para utilizar as informações de conexão com o PostgreSQL.
+
+### 1. Configuração da conexão
+
+Crie ou ajuste o arquivo de configuração do TypeORM, utilizando as variáveis definidas no `.env`.
+
+Exemplo:
+
+```ts
+import "dotenv/config";
+import { DataSource } from "typeorm";
+
+export const AppDataSource = new DataSource({
+  type: "postgres",
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT),
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+
+  entities: ["src/entities/**/*.ts"],
+  migrations: ["src/migrations/**/*.ts"],
+
+  synchronize: false,
+});
+
+
+###### #################################
 
 5. Migrations e seed (sugestão):
 

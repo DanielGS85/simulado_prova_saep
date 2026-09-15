@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src", // Define a base para os caminhos relativos
+    "paths": {
+      "@entities/*": ["entities/*"], // Alias para a pasta entities
+      "@services/*": ["services/*"], // Alias para a pasta services
+      "@controllers/*": ["controllers/*"], // Alias para a pasta controllers
+      "@utils/*": ["utils/*"], // Alias para a pasta utils
+      "@config/*": ["config/*"] // Alias para a pasta config
+    },
+    "moduleResolution": "node", // Resolve módulos como o Node.js
+    "esModuleInterop": true, // Permite importações padrão
+    "strict": true, // Ativa verificações estritas do TypeScript
+    "skipLibCheck": true // Ignora verificações em arquivos de definição de tipos
+  }
+}
