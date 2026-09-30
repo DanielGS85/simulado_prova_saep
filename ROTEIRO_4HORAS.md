@@ -6,7 +6,7 @@
 - **50-120min:** Frontend (páginas)
 - **120-170min:** API Routes (backend)
 - **170-210min:** Segurança + Validações
-- **210-240min:** Testes + Entrega
+- **210-240min:** Testes + entrega
 
 ---
 
