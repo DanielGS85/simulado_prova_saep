@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "db:levanta": "node --env-file=.env.local --loader ts-node/esm db/roda.mts db/levanta.sql",
+    "db:popula": "node --env-file=.env.local --loader ts-node/esm db/roda.mts db/popula.sql"
   },
   "dependencies": {
     "next": "16.3.7",
+    "postgres": "^3.4.9",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
@@ -21,6 +23,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.7",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
